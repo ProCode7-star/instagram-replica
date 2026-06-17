@@ -1,18 +1,28 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
 std::string obtenerUsuarioPublico() {
     std::ifstream archivo("data/profile.json");
-    
-    // Diagnóstico rápido
-    if (!archivo.is_open()) {
-        std::cout << "DEBUG: No se pudo abrir el archivo en la ruta especificada." << std::endl;
-        return "ERROR_RUTA";
-    }
+    std::string linea;
+    std::string nombre = "Desconocido";
 
-    // Verificar si el archivo tiene tamaño real
-    archivo.seekg(0, std::ios::end);
-    if (archivo.tellg() == 0) {
-        std::cout << "DEBUG: El archivo está físicamente vacío." << std::endl;
-        return "VACIO";
+    if (archivo.is_open()) {
+        while (std::getline(archivo, linea)) {
+            // Buscamos la clave exacta "handle"
+            if (linea.find("\"handle\"") != std::string::npos) {
+                // Buscamos dónde empieza el valor después de los dos puntos
+                size_t inicio = linea.find(": \"") + 3;
+                // Buscamos el final de la cadena (la siguiente comilla)
+                size_t fin = linea.find("\"", inicio);
+                
+                if (inicio != std::string::npos && fin != std::string::npos) {
+                    nombre = linea.substr(inicio, fin - inicio);
+                }
+                break;
+            }
+        }
+        archivo.close();
     }
-    
-    // ... resto de tu lógica de lectura ...
+    return nombre;
 }
