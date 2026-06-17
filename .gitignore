@@ -1,18 +1,13 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
 
-# Other files and folders
-.settings/
+# Carpetas de configuración de editores de código (como VS Code)
+.vscode/
+.idea/
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+# Logs de errores
+*.log
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+# En caso de que uses algún paquete en el futuro (opcional)
+node_modules/
