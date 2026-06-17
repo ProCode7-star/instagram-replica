@@ -1,0 +1,6 @@
+Bitácora de C++:
+Este proyecto ha requerido mucho esfuerzo, lógica y concentración. 
+Cada línea de código, cada menú en la consola y cada función ha sido 
+un reto, pero valió totalmente la pena para ver el juego funcionando. 
+
+¡Programar en C++ no es fácil, pero aquí está el resultado del trabajo duro!
