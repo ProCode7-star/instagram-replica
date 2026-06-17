@@ -1,0 +1,3 @@
+¡Bienvenido a la carpeta de notas!
+
+Esta carpeta está destinada a almacenar notas e información importante del proyecto.
