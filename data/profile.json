@@ -1,0 +1,18 @@
+std::string obtenerUsuarioPublico() {
+    std::ifstream archivo("data/profile.json");
+    
+    // Diagnóstico rápido
+    if (!archivo.is_open()) {
+        std::cout << "DEBUG: No se pudo abrir el archivo en la ruta especificada." << std::endl;
+        return "ERROR_RUTA";
+    }
+
+    // Verificar si el archivo tiene tamaño real
+    archivo.seekg(0, std::ios::end);
+    if (archivo.tellg() == 0) {
+        std::cout << "DEBUG: El archivo está físicamente vacío." << std::endl;
+        return "VACIO";
+    }
+    
+    // ... resto de tu lógica de lectura ...
+}
